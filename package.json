@@ -1,0 +1,28 @@
+{
+  "name": "interfacemanager",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
+  },
+  "description": "接口管理系统重构（MEAN)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bwpAjs/INF.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bwpAjs/INF/issues"
+  },
+  "homepage": "https://github.com/bwpAjs/INF#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
