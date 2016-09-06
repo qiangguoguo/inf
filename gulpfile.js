@@ -59,7 +59,7 @@ gulp.task('node', function () {
 });
 
 /**
- * 处理public bower_components
+ * 处理public components
  */
 gulp.task('components', function () {
     gulp.src('public/components/*/dist/**.min.js')
@@ -126,6 +126,12 @@ gulp.task('css', function () {
         .pipe(concat('inf.min.css'))
         .pipe(gulp.dest(buildPath + '/public/stylesheets'))
 });
+
+/*gulp.task('node', function () {
+    //['node_modules/!**!/!*.less','!less/{extend,page}/!*.less']
+    gulp.src(['node_modules/','node_modules/{!gulp-**,!imagemin-pngquant}'])
+        .pipe(gulp.dest(buildPath + '/node_modules'))
+});*/
 
 /**
  * 默认任务
