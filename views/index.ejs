@@ -3,30 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href=""/>
-    <script src="components/jquery/dist/jquery.min.js"></script>
-    <style>
-        body{
-            background-color: #fff;
-            width: 100%;
-        }
-        em{
-            background-color: #fff;
-            font-size: 33px;
-        }
-        img{
-            width: 100%;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+
 </head>
-<body>
-    你好 欢迎来到 MEAN
-    <img src="images/IMG_8356.png" alt=""/>
-    <script>
-        $(function(){
-            console.log('haihei');
-        })
-    </script>
+<body ng-app="inf">
+    <section ng-view></section>
+
+
+    <script src="components/jquery/dist/jquery.min.js?rev=@@hash"></script>
+    <script src="components/angular/angular.min.js?rev=@@hash"></script>
+    <script src="components/angular-route/angular-route.min.js?rev=@@hash"></script>
+    <script src="components/angular-resource/angular-resource.min.js?rev=@@hash"></script>
+    <script src="components/angular-cookies/angular-cookies.min.js?rev=@@hash"></script>
+    <script src="javascripts/application.js?rev=@@hash"></script>
+    <script src="javascripts/controller.js?rev=@@hash"></script>
+    <script src="javascripts/resource.js?rev=@@hash"></script>
+    <script src="javascripts/service.js?rev=@@hash"></script>
+    <script src="javascripts/directive.js?rev=@@hash"></script>
+
 </body>
 </html>

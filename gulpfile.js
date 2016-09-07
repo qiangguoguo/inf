@@ -11,6 +11,8 @@ var gulp = require('gulp'),
     htmlmin = require('gulp-htmlmin'),  //压缩html
     cssMin = require('gulp-clean-css'), // 压缩css
     concat = require('gulp-concat'),    //合并文件
+    rev = require('gulp-rev-append'),   //文件Hash
+    replace = require('gulp-replace'),  //替换
     uglify = require('gulp-uglify');    //压缩js文件
 
 var devFlag = config.dev;
@@ -92,7 +94,10 @@ gulp.task('routes', function () {
  * 处理html
  */
 gulp.task('template', function () {
-    gulp.src('views/**')
+    gulp.src('views/**.{ejs,html}')
+        .pipe(replace('src="','src="../public/')) //rev() 要找对正确的根路径
+        .pipe(rev())
+        .pipe(replace('../public/',''))
         .pipe(htmlmin({
             collapseWhitespace: true,          //清除空格
             collapseBooleanAttributes: true,   //省略布尔属性的值
