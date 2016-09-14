@@ -4,6 +4,10 @@ body, div, p, ul, li {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+ul, li {
+    list-style: none;
+}
+
 a {
     color: #00B7FF;
 }
@@ -31,4 +35,10 @@ a {
     width: 100%;
     padding-left: 101px;
     height: 100%
+}
+
+.menu-content {
+    width: 100%;
+    border: 1px solid;
+    height: 69px;
 }
