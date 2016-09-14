@@ -8,7 +8,7 @@ var mainApplicationModuleName = 'inf';
 var mainApplicationModule = angular.module(mainApplicationModuleName, ['ngResource', 'ngRoute', 'ngCookies']);
 
 /**
- * 配置块
+ * 配置块  bwp 09-13
  * 在模块的加载阶段，AngularJS会在提供者注册和配置的过程中对模块进行配置。
  * 在整个AngularJS的工作流中，这个阶段是唯一能够在应用启动前进行修改的部分
  */
@@ -20,6 +20,9 @@ mainApplicationModule.config(['$locationProvider', '$routeProvider',
                 templateUrl: './system/login.html',
                 controller: 'systemController'
             })
+            .when('/addInterface', {
+                templateUrl: './server/addInterface.html'
+            })
             .otherwise({
                 templateUrl: './system/index.html',
                 controller: 'indexController'
@@ -28,7 +31,7 @@ mainApplicationModule.config(['$locationProvider', '$routeProvider',
 ]);
 
 /**
- * 运行块
+ * 运行块 bwp 09-13
  * 运行块在注入器创建之后被执行，它是所有AngularJS应用中第一个被执行的方法。
  * 我们会在.run()块中设置路由事件的监听器以及过滤未经授权的请求。，都执行一个
  * 函数来验证用户的权限，放置这个功能唯一合理的地方就是run方法：
@@ -36,6 +39,7 @@ mainApplicationModule.config(['$locationProvider', '$routeProvider',
  */
 mainApplicationModule.run(['$rootScope', '$location', 'authService', function ($rootScope, $location, authService) {
     $rootScope.$on('$routeChangeStart', function (event, toState, toParams, fromState, fromParams) {
+        //判断用户是否登录
         if (!authService.userIsLoginIn()) {
             if (toState.templateUrl === "./system/login.html") {
                 // 已经转向登录路由因此无需重定向
@@ -43,7 +47,11 @@ mainApplicationModule.run(['$rootScope', '$location', 'authService', function ($
                 $location.path('/login');
             }
         } else {
-            $rootScope.moduleList = authService.getAuthorData();
+
+            $rootScope.user = authService.getUserCookie();
+            if (!$rootScope.menuList) {
+                $rootScope.menuList = authService.getAuthorData();
+            }
         }
     });
 }]);

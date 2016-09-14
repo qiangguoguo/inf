@@ -1,6 +1,11 @@
 <!--Created by beiwp on 2016/9/7.-->
-<div class="row">
+<div>
     <ul>
-        <li ng-repeat="item in moduleList"><a href="">{{item.name}}</a></li>
+        <li ng-repeat="item in menuList">
+            <a href="" ng-click="clickMenu(item)">{{item.name}}</a>
+            <div class="menu-content" ng-if="item.isActived">
+                为 {{item.name}} <a href="#!/addInterface">新增接口</a>
+            </div>
+        </li>
     </ul>
 </div>
