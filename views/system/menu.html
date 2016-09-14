@@ -1,6 +1,11 @@
 <!--Created by beiwp on 2016/9/7.-->
 <div class="row">
     <ul>
-        <li ng-repeat="item in moduleList"><a href="">{{item.name}}</a></li>
+        <li ng-repeat="item in moduleList">
+            <a href="" ng-click="clickMenu(item)">{{item.name}}</a>
+            <div class="menu-content" ng-if="item.isActived">
+                888
+            </div>
+        </li>
     </ul>
 </div>
