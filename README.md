@@ -158,6 +158,7 @@
 				 userMail:   邮箱
 				 userRoleId: 角色 1 管理员  2普通用户
 				 userAge:    年龄
+				 userlog     xxx
 
 
 
