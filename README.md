@@ -157,7 +157,7 @@
 				 userName:   账号
 				 userMail:   邮箱
 				 userRoleId: 角色 1 管理员  2普通用户
-				 userHeight ： xxxxxxxxxx
+				 userHeight ： x
 
 				 
 
