@@ -162,6 +162,8 @@
 			     userXXX:XXX
 
 				 
+				 userAge:    年龄
+				 userlog     xxx
 
 
 
